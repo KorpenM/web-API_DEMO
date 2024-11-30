@@ -10,6 +10,19 @@ public static class ZipCodeService
         var apiUrl = $"https://api.zippopotam.us/us/{zipCode}";
         using var client = new HttpClient();
 
+        /*
+        "post code": "07645"
+        "country": "United States"
+        "country abbreviation": "US"
+        "places"
+
+             "place name": "Montvale"
+             "longitude": "-74.0656"
+             "state": "New Jersey"
+             "state abbreviation": "NJ"
+            "latitude": "41.0036"
+        */
+
         try
         {
             var response = await client.GetStringAsync(apiUrl);
